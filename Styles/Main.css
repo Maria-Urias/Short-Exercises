@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: aliceblue;
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+  border: 5px double rebeccapurple;
+  background-color: white;
+}
+
+main {
+  padding: 20px;
+}
