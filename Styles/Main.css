@@ -1,12 +1,17 @@
+:root {
+  --primary-color: rebeccapurple;
+  --secondary-color: aliceblue;
+  --accent-color: gold;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 html {
-  background-color: aliceblue;
+  background-color: var( --secondary-color)-;
 }
-body {
+body { 
   width: 90%;
   margin: 0 auto;
   border: 5px double rebeccapurple;
@@ -14,7 +19,7 @@ body {
   h1 {
   font-size: 150%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rebeccapurple;
+  color: var(--primary-color)-; 
   h2 {
   font-size: 125%;
   h2 {
