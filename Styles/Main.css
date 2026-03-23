@@ -3,50 +3,70 @@
   --secondary-color: aliceblue;
   --accent-color: gold;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
-  background-color: var( --secondary-color)-;
+  background-color: var(--secondary-color);
 }
+
 body { 
   width: 90%;
   margin: 0 auto;
   border: 5px double rebeccapurple;
   background-color: white;
-  h1 {
+}
+
+h1 {
   font-size: 150%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: var(--primary-color)-; 
-  h2 {
+  color: var(--primary-color);
+}
+
+h2 {
   font-size: 125%;
-  h2 {
+}
+
+h3 {
   font-size: 115%;
-  h1, h2, h3, p, blockquote, ul, ol, li {
+}
+
+h1, h2, h3, p, blockquote, ul, ol, li {
   margin: 20px 0;  
   padding: 10px 0;
-  cite {
+}
+
+cite {
   color: rebeccapurple;
   font-style: normal;
   font-weight: bold;
+}
+
 img {
   float: left;
   margin: 0 20px 20px 0;
   width: 200px;
 }
+
 h1, h2, h3, p, blockquote, ul, ol, li {
   margin-top: 20px;
-  margin-bottom:
+  margin-bottom: 20px;
 }
+
 main {
   padding: 20px;
 }
+
 footer {
   border-top: 5px solid rebeccapurple;
   padding: 10px 0; 
   text-align: center;
+}
+
 footer p {
   font-size: 90%;
   font-weight: bold;
