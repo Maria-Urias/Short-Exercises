@@ -1,75 +1,18 @@
-:root {
-  --primary-color: rebeccapurple;
-  --secondary-color: aliceblue;
-  --accent-color: gold;
+.speakers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  background-color: var(--secondary-color);
-}
-
-body { 
-  width: 90%;
-  margin: 0 auto;
-  border: 5px double rebeccapurple;
-  background-color: white;
-}
-
-h1 {
-  font-size: 150%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: var(--primary-color);
-}
-
-h2 {
-  font-size: 125%;
-}
-
-h3 {
-  font-size: 115%;
-}
-
-h1, h2, h3, p, blockquote, ul, ol, li {
-  margin: 20px 0;  
-  padding: 10px 0;
-}
-
-cite {
-  color: rebeccapurple;
-  font-style: normal;
-  font-weight: bold;
-}
-
-img {
+.speakers img {
   float: left;
-  margin: 0 20px 20px 0;
-  width: 200px;
+  margin-right: 20px;
 }
 
-h1, h2, h3, p, blockquote, ul, ol, li {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.article {
+  flex: 1;
 }
 
-main {
-  padding: 20px;
-}
-
-footer {
-  border-top: 5px solid rebeccapurple;
-  padding: 10px 0; 
-  text-align: center;
-}
-
-footer p {
-  font-size: 90%;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0; 
+.guest-speakers {
+  flex: 0 0 300px;  /* Fixed width for guest speakers */
 }
