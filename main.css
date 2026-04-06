@@ -23,14 +23,11 @@ body {
     border: 3px solid var(--primary-color);
 }
 header, section, aside, footer { padding: 1em; }
-h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
-ul { margin-left: 1em; }
+h1, h2, h3, p, article { padding-bottom: .5em; }
 h1 { font-size: 150%; }
 h2 { font-size: 120%; }
 h3 { font-size: 110%; }
-a:focus, a:hover {
-	font-style: italic;
-}
+a:focus, a:hover { font-style: italic; }
 
 /* the styles for the header */
 header {
@@ -60,35 +57,24 @@ header {
 /* the styles for the main element */
 main {
 	clear: left;
+	display: flex;
 }
 
 /* the styles for the section */
 section {
+	order: 2;
+	flex-basis: 75%;
 	& h1 {
-		padding-top: .5em;
-	}
-	& h2 {
 		color: var(--primary-color);
-	}
-	& article + h2 {
-		clear: right;
-		border-top: 3px solid var(--primary-color);
-		padding-top: .5em;
-	}
-	& blockquote {
-		font-style: italic;
-		margin-left: 2em;
+		margin: 0;
 	}
 }
 
 /* the styles for the article */
 article {
-	border-top: 3px solid var(--primary-color);
-	padding-top: .5em;
-	margin-bottom: .5em;
 	& img {
-		float: right;
-		margin: .25em 0 1em 1em;
+		float: left;
+		margin: .25em 1em 1em 0;
 		border: 1px solid var(--dark);
 		width: min(100%, 225px);
 	}
@@ -96,6 +82,8 @@ article {
 
 /* the styles for the aside */
 aside {
+	order: 1;
+	flex-basis: 25%;
 	& h2 {
 		color: var(--primary-color);
 	}
