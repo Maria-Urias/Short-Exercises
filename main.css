@@ -91,6 +91,43 @@ aside {
 		margin-bottom: .9em;
 	}
 }
+.sidebar {
+  width: 200px;
+  background-color: #333; /* match footer */
+  float: left;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  color: #f4a261; /* accent color */
+}
+
+.sidebar a.current {
+  background-color: #f4a261;
+  color: black;
+}
+
+.sidebar a.current:hover {
+  color: black;
+}
+
+/* Push content over so it doesn't overlap */
+main {
+  margin-left: 200px;
+}
 
 /* the styles for the footer */
 footer {
