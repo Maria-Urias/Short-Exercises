@@ -1,4 +1,4 @@
-/* variables */
+
 :root {
 	--primary-color: #931420;
 	--accent-color: #f6bb73;
@@ -7,14 +7,12 @@
 	--dark: black;
 }
 
-/* reset */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* the default styles for the elements */
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
@@ -29,8 +27,6 @@ h1 { font-size: 150%; }
 h2 { font-size: 120%; }
 h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
-
-/* the styles for the header */
 header {
 	border-bottom: 3px solid var(--primary-color);
 	background-image: linear-gradient(30deg, 
@@ -56,21 +52,17 @@ header {
 	}
 }
 
-/* the styles for the main element */
 main {
 	clear: left;
 	display: flex;
 	flex-direction: column;
 }
-
-/* the styles for the section */
 section {
 	& h1 {
 		color: var(--primary-color);
 	}
 }
 
-/* the styles for the article */
 article {
 	padding-top: .5em;
 	margin-bottom: .5em;
@@ -81,8 +73,6 @@ article {
 		width: min(100%, 225px);
 	}
 }
-
-/* the styles for the aside */
 aside {
 	& h2 {
 		color: var(--primary-color);
@@ -96,7 +86,6 @@ aside {
 	}
 }
 
-/* the styles for the footer */
 footer {
 	background-color: var(--primary-color);
 	& p {
@@ -106,7 +95,6 @@ footer {
 	}
 }
 
-/* the styles for the navigation menu */
 .navbar {
 	background-color: var(--primary-color);
 	& ul {
@@ -124,7 +112,7 @@ footer {
 		font-weight: bold;
 	}
 	& a.current:hover { 
-		font-style: normal; /* override hover effect */
+		font-style: normal;
 	}
 }
 
@@ -137,7 +125,7 @@ footer {
 .menu li:has(.submenu) {
 	position: relative;
 	& small {
-		margin-left: .25em; /* add space for arrow */
+		margin-left
 	}
 	&:hover > .submenu {
 		display: block;
@@ -152,22 +140,21 @@ footer {
 	width: 175%;
 	display: none;
 }
+media screen and (min-width: 620px) {
 
-/* the media query for the page */
-@media only screen and (min-width: 620px) {
-	header {
-		text-align: left;
-	}
-	main {
-		flex-direction: row;
-	}
-	section {
-		order: 2;
-		flex-basis: 75%;
-	}
-	aside {
-		order: 1;
-		flex-basis: 25%;
-	}
-}
+  #menu-btn {
+    display: none;
+  }
 
+  nav ul {
+    display: flex;
+  }
+
+  #menu-toggle:checked + #menu-btn + nav ul {
+    display: flex;
+  }
+
+  nav ul li ul {
+    left: 0;
+    top: 100%;
+  }
