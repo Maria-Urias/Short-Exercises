@@ -1,4 +1,13 @@
-/* variables */
+main {
+    display: flex;
+    flex-direction: column; 
+}
+
+section, aside {
+}
+
+header h2 {
+    display: none; 
 :root {
 	--primary-color: #931420;
 	--accent-color: #f6bb73;
@@ -6,15 +15,31 @@
 	--light: white;
 	--dark: black;
 }
+	@media screen and (min-width: 768px) {
+    main {
+        flex-direction: row; 
+    }
 
-/* reset */
+    section {
+        order: 1;
+        flex-basis: 70%;
+    }
+
+    aside {
+        order: 2;
+        flex-basis: 30%;
+    }
+
+    header h2 {
+        display: block; 
+    }
+}
+	
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-/* the default styles for the elements */
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
@@ -29,7 +54,6 @@ h2 { font-size: 120%; }
 h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
 
-/* the styles for the header */
 header {
 	border-bottom: 3px solid var(--primary-color);
 	background-image: linear-gradient(30deg, 
@@ -54,13 +78,11 @@ header {
 	}
 }
 
-/* the styles for the main element */
 main {
 	clear: left;
 	display: flex;
 }
 
-/* the styles for the section */
 section {
 	order: 2;
 	flex-basis: 75%;
@@ -70,7 +92,6 @@ section {
 	}
 }
 
-/* the styles for the article */
 article {
 	& img {
 		float: left;
@@ -80,7 +101,6 @@ article {
 	}
 }
 
-/* the styles for the aside */
 aside {
 	order: 1;
 	flex-basis: 25%;
@@ -124,77 +144,67 @@ aside {
   color: black;
 }
 
-/* Push content over so it doesn't overlap */
 main {
   margin-left: 200px;
 }
 navbar {
-  background-color: #333; /* match footer */
+  background-color: #333;
 }
-
-/* MAIN MENU */
 .menu {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  flex-wrap: wrap; 
 }
 
-/* MENU ITEMS */
 .menu li {
-  position: relative; /* needed for submenu positioning */
+  position: relative; 
 }
 
-/* LINKS */
 .menu a {
-  display: block;        /* full clickable area */
+  display: block;        
   padding: 12px 16px;
   text-decoration: none;
   color: white;
   font-weight: normal;
 }
 
-/* DEFAULT HOVER (italic) */
 .menu a:hover {
   font-style: italic;
 }
 
-/* CURRENT PAGE */
 .menu a.current {
-  color: #f4a261;  /* accent color */
+  color: #f4a261; 
   font-weight: bold;
 }
 
-/* KEEP CURRENT FROM CHANGING */
 .menu a.current:hover {
   font-style: normal;
 }
 
-/* SUBMENU */
+
 .submenu {
   list-style: none;
   position: absolute;
-  top: 100%;        /* directly below parent */
+  top: 100%;        
   left: 0;
   background-color: #333;
   padding: 0;
   margin: 0;
-  display: none;    /* hidden by default */
-  z-index: 1000;    /* shows on top of content */
+  display: none;    
+  z-index: 1000;    
 }
 
-/* SUBMENU LINKS */
 .submenu a {
   white-space: nowrap;
 }
 
-/* SHOW SUBMENU ON HOVER */
 .menu li:hover .submenu {
   display: block;
 }
 
-/* the styles for the footer */
+
 footer {
 	background-color: var(--primary-color);
 	& p {
