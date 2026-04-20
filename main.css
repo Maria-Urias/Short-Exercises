@@ -114,7 +114,9 @@ footer {
 
 /* the styles for the navigation menu */
 .navbar {
+	container-type: inline-size;
 	background-color: var(--primary-color);
+	position: relative;
 	& ul {
 		list-style-type: none;
 		margin: 0;
@@ -134,8 +136,101 @@ footer {
 	}
 }
 
+/* hidden checkbox — keeps it functional while invisible */
+.menu-btn {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* hamburger / close button shown on small screens */
+.menu-label {
+	display: block;
+	cursor: pointer;
+	padding: .75em;
+	color: var(--light);
+	font-size: 1.2em;
+	user-select: none;
+	background-color: var(--primary-color);
+}
+
+.menu-label::before {
+	content: '☰';
+}
+
+/* change to close symbol when menu is open */
+.navbar:has(.menu-btn:checked) .menu-label::before {
+	content: '✕';
+}
+
+/* navigation menu — small-screen defaults */
 .menu {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	& li {
+		position: relative;
+	}
+	/* nested submenu */
+	& li > ul {
+		display: none;
+		position: absolute;
+		left: 100%;
+		top: 0;
+		background-color: var(--primary-color);
+		z-index: 10;
+		min-width: max-content;
+	}
+	/* show submenu on hover */
+	& li:hover > ul {
+		display: block;
+	}
+	/* right-pointing triangle for items that have a submenu */
+	& li:has(> ul) > a::after {
+		content: ' ▶';
+	}
+}
+
+/* hide menu items on small screens when a hamburger button is present */
+.navbar:has(.menu-label) .menu li {
+	display: none;
+}
+
+/* show menu items when the checkbox is checked */
+.navbar:has(.menu-btn:checked) .menu li {
+	display: block;
+}
+
+/* container query for larger containers (560px+) */
+@container (min-width: 560px) {
+	/* hide the hamburger button */
+	.menu-label {
+		display: none;
+	}
+
+	/* display the menu horizontally */
+	.menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+		/* always show all items */
+		& li {
+			display: block;
+		}
+
+		/* submenu appears below the menu item */
+		& li > ul {
+			left: 0;
+			top: 100%;
+		}
+
+		/* down-pointing triangle for items that have a submenu */
+		& li:has(> ul) > a::after {
+			content: ' ▼';
+		}
+	}
+
+	/* ensure menu stays horizontal even if checkbox is checked */
+	.navbar:has(.menu-label) .menu li {
+		display: block;
+	}
 }
