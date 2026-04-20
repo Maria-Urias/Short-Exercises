@@ -1,4 +1,4 @@
-
+/* variables */
 :root {
 	--primary-color: #931420;
 	--accent-color: #f6bb73;
@@ -7,12 +7,14 @@
 	--dark: black;
 }
 
+/* reset */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+/* the default styles for the elements */
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
@@ -27,6 +29,8 @@ h1 { font-size: 150%; }
 h2 { font-size: 120%; }
 h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
+
+/* the styles for the header */
 header {
 	border-bottom: 3px solid var(--primary-color);
 	background-image: linear-gradient(30deg, 
@@ -35,7 +39,6 @@ header {
 		var(--light) 50%, 
 		var(--light-accent) 75%, 
 		var(--accent-color) 100%);
-	text-align: center;
 	& h2 {
 		font-size: 175%;
 		color: var(--primary-color);
@@ -52,17 +55,27 @@ header {
 	}
 }
 
+/* the styles for the main element */
 main {
 	clear: left;
 	display: flex;
-	flex-direction: column;
 }
+
+/* the styles for the section */
 section {
+	flex-basis: 75%;
 	& h1 {
 		color: var(--primary-color);
 	}
+	& article + h2 {
+		clear: left;
+		color: var(--primary-color);
+		border-top: 3px solid var(--primary-color);
+		padding-top: .5em;
+	}
 }
 
+/* the styles for the article */
 article {
 	padding-top: .5em;
 	margin-bottom: .5em;
@@ -73,7 +86,10 @@ article {
 		width: min(100%, 225px);
 	}
 }
+
+/* the styles for the aside */
 aside {
+	flex-basis: 25%;
 	& h2 {
 		color: var(--primary-color);
 	}
@@ -86,6 +102,7 @@ aside {
 	}
 }
 
+/* the styles for the footer */
 footer {
 	background-color: var(--primary-color);
 	& p {
@@ -95,6 +112,7 @@ footer {
 	}
 }
 
+/* the styles for the navigation menu */
 .navbar {
 	background-color: var(--primary-color);
 	& ul {
@@ -112,7 +130,7 @@ footer {
 		font-weight: bold;
 	}
 	& a.current:hover { 
-		font-style: normal;
+		font-style: normal; /* override hover effect */
 	}
 }
 
@@ -121,40 +139,3 @@ footer {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-
-.menu li:has(.submenu) {
-	position: relative;
-	& small {
-		margin-left
-	}
-	&:hover > .submenu {
-		display: block;
-	}
-}
-
-.submenu {
-	position: absolute;
-	left: 0;
-	background-color: var(--primary-color);
-	color: var(--light);
-	width: 175%;
-	display: none;
-}
-media screen and (min-width: 620px) {
-
-  #menu-btn {
-    display: none;
-  }
-
-  nav ul {
-    display: flex;
-  }
-
-  #menu-toggle:checked + #menu-btn + nav ul {
-    display: flex;
-  }
-
-  nav ul li ul {
-    left: 0;
-    top: 100%;
-  }
